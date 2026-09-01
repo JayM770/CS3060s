@@ -1,0 +1,27 @@
+jots@Jots-MacBook-Air-1403 ~ % python
+Python 3.14.7 (v3.14.7:823f0323ee6, Aug  5 2026, 07:07:01) [Clang 21.0.0 (clang-2100.1.1.101)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> pi = 22/7
+>>> radius = 4.15
+>>> a = pi * (radius**2)
+>>> c = pi * (radius * 2)
+>>> print(a)
+54.12785714285715
+>>> print(c)
+26.08571428571429
+>>> 
+
+
+#2
+>>> x = "+"
+>>> c = "/"
+>>> s1 = "s" + x +2*c
+>>> y = "a"
+>>> z = "b"
+>>> x = "2"
+>>> s2 = (y + z)*int(x)
+>>> print(s1)
+s+//
+>>> print(s2)
+abab
+>>> 
