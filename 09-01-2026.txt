@@ -25,3 +25,40 @@ s+//
 >>> print(s2)
 abab
 >>> 
+>>> s1 = "Rossum"
+>>> s1[2:4]
+'ss'
+>>> s1[2:5:1]
+'ssu'
+>>> s1[2:5:2]
+'su'
+>>> s1[2:5:1]
+'ssu'
+>>> clear
+
+
+
+>>> s1[2:3]
+'s'
+>>> s1[3:5]
+'su'
+>>> s1[[4:5]
+  File "<python-input-7>", line 1
+    s1[[4:5]
+         ^
+SyntaxError: invalid syntax
+>>> s1[4:5]
+'u'
+>>> s1[1:5:2]
+'os'
+>>> s1[:]
+'Rossum'
+>>> s1[:-2]
+'Ross'
+>>> s1[::-1]
+'mussoR'
+>>> s1[1::-2]
+'o'
+>>> s1[0:len(s1):1]
+'Rossum'
+>>> 
