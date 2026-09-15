@@ -1,0 +1,26 @@
+secretnum = 7
+
+s0 = int(input("Guess a number: "))
+
+if s0 > secretnum:
+    print("too high")
+
+if s0 < secretnum:
+    print("too low")
+
+else: 
+    print("you right!!!")
+
+
+cart_total = 120
+is_member = True
+has_coupon = False
+
+if (is_member == True and cart_total > 100):
+    print("Member disocunt: 20 + free shipping")
+
+if (is_member == True and cart_total > 50):
+    print("member discount: 10 + free shipping")
+
+if (is_member == True and cart_total <= 50):
+    print("member discount: 5")

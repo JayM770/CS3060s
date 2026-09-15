@@ -1,0 +1,42 @@
+jots@Jots-MacBook-Air-1403 ~ % python
+Python 3.14.7 (v3.14.7:823f0323ee6, Aug  5 2026, 07:07:01) [Clang 21.0.0 (clang-2100.1.1.101)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> s1 = "Rossum"
+>>> s1[2] = "a"
+Traceback (most recent call last):
+  File "<python-input-1>", line 1, in <module>
+    s1[2] = "a"
+    ~~^^^
+TypeError: 'str' object does not support item assignment
+>>> s1 = "Guide"
+
+>>> price = 30
+>>> discount = 20
+>>> print("Orignal price was" price "but after" discount "% discount, it is now\
+ "discount/100))
+  File "<python-input-2>", line 1
+    print("Orignal price was" price "but after" discount "% discount, it is now "discount/100))
+                                                                                              ^
+SyntaxError: unmatched ')'
+>>> 
+>>> s0 = "Type your name"
+>>> s1 = input(s0)
+Type your nameManjot
+>>> 
+
+
+secretnum = 7
+
+s0 = int(input("Guess a number: "))
+
+if s0 > secretnum:
+    print("too high")
+
+if s0 < secretnum:
+    print("too low")
+
+else: 
+    print("you right!!!")
+
+
+
