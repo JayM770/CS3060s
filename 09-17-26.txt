@@ -1,0 +1,70 @@
+import time
+
+
+
+def factorial(n):
+    if n < 0:
+        raise ValueError("Negative number")
+    elif n == 0: #Base case: factorial of 0 is 1:
+        return 1
+    else: # Recursive case: n! = n * (n-1)!:
+        return n * factorial(n-1)
+    
+def fact(n):
+    if n < 0:
+        raise ValueError("Negagtive number!")
+    
+    result = 1
+    for i in range(1, n+1):
+        result *= i
+
+    return result
+
+
+
+n = 486
+start = time.perf_counter()
+factorial(n)
+end = time.perf_counter()
+print(f"Recursive took {(end - start) * 1e6:.2f} us")
+
+
+n = 486
+start = time.perf_counter()
+fact(n)
+end = time.perf_counter()
+print(f"iterative took {(end - start) * 1e6:.2f} us")
+
+
+import time
+def fibonacci(n):
+    if n <= 1:
+        return n
+    a, b  = 0,1
+
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+    return b
+
+
+def fibonacci_recur(n):
+    if n <= 1:
+        return n
+    return fibonacci_recur(n - 1) + fibonacci_recur(n - 2)
+
+
+n = 486
+start = time.perf_counter()
+fibonacci(n)
+end = time.perf_counter()
+print(f"iteration took {(end - start) * 1e6:.2f} us")
+
+
+n = 486
+start = time.perf_counter()
+fibonacci_recur(n)
+end = time.perf_counter()
+print(f"recursionctook {(end - start) * 1e6:.2f} us")
+    
+
+
