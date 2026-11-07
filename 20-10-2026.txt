@@ -1,0 +1,31 @@
+import java.io.File
+import java.io.PrintWriter
+import scala.io.Source
+object Write {
+def main(args: Array[String]):Unit =
+{   val writer = new PrintWriter(new File("myFile.txt"))
+    writer.write("Hello" + "\n")
+    writer.write("Hello again" + "\n")
+    writer.close()
+    Source.fromFile("myFile.txt").foreach {x => print(x)}
+}
+}
+
+
+ 
+
+val myList = List(21, 32, 3)
+
+myList(1)
+res01: Int = 32
+
+val myList = List(21, 32, "abc")
+myList: List[Any] = List(21, 32, abc)
+
+myList(2)
+res02: Any = abc
+
+
+val animals = Set("lions", "tigers", "bears")
+    animals + "armadillos"
+    animals - "tigers"

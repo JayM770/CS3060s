@@ -1,0 +1,111 @@
+cala> class Person(fName: String, lName: String) {
+        def fullName: String = fName + " " + lName
+       }
+// defined class Person
+                                                                                
+scala> 
+                                                                                
+scala> class Person(val fName: String, var lName: String) {
+        def fullName: String = fName + " " + lName
+       }
+// defined class Person
+                                                                                
+scala> 
+
+import sys
+import time
+
+sys.set_int_max_str_digits(0)  # allow printing huge ints (10000! has ~35k digits)
+
+start_time = time.perf_counter()
+
+def trampoline(f, *args):
+    while callable(f):
+        f = f(*args)
+        args = ()
+    return f
+
+def factorial(n, acc=1):
+    if n <= 1:
+        return acc
+    
+    # Return the next "step" as a lambda instead of recursing directly
+
+    return lambda: factorial(n - 1, n * acc)
+
+
+
+# Compute factorial using trampoline
+print(str(trampoline(factorial, 20000)))
+
+elapsed_ms = (time.perf_counter() - start_time) * 1000
+print(f"Time taken: {elapsed_ms:.3f} ms")
+
+import scala.util.control.TailCalls._
+
+def factorial(n: Int, acc: BigInt = 1): TailRec[BigInt] = {
+    if (n <= 1) done(acc)
+    else tailcall(factorial(n - 1, n * acc))
+}
+
+@main def run(): Unit = {
+    val startTime = System.nanoTime()
+
+    println(factorial(20000).result) // 120
+
+    val elapsedMs = (System.nanoTime() - startTime) / 1e6
+    println(f"Time taken: $elapsedMs%.3f ms")
+}
+
+
+import scala.annotation.tailrec
+@tailrec
+def factorial(n: Int, acc: BigInt = 1): BigInt =
+if (n <= 1) acc
+else factorial(n - 1, n * acc)
+println(factorial(5)) // 120
+
+
+def factorial(n0: Int, acc0: BigInt = 1): BigInt =
+var n = n0
+var acc = acc0
+while n > 1 do
+acc = n * acc
+n = n - 1
+acc
+
+
+
+
+class Book:
+
+    def_init_(self,title,author): 
+    self.title = title
+    self.author = author
+    self.is_checked_out = False
+    
+    def check_out(self):
+     if not self.is_checked_out:
+        self.is_checked_out = True
+        return f"{self.title} checked out.)"
+     return f"{self.title} is already checked out."
+    
+
+book1 = Book("1984", "George Orwell")
+book2 = Book("Wuthering Heights", "Emily Bronte")
+book3 = Book("The great gatsby", "F. Scott Fitzerland")
+
+import types
+def extendReturnDate(self):
+   #update return date for the book
+   return f"Return date extended by 10 days"
+
+book1 = Book("1984", "George Orwell")
+book2 = Book("Wuthering Heights", "Emily Bronte")
+book3 = Book("The great gatsby", "F. Scott Fitzerland")
+
+book2.publication_date = 1847
+book2.extendReturnDate = types.MethodType(extendReturnDate, book2)
+
+
+

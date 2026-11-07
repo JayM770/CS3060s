@@ -1,0 +1,221 @@
+scala> "abc" + 4
+val res0: String = "abc4"
+                                                                                
+scala> 4 + "abc"
+1 warning found
+-- Deprecation Warning: --------------------------------------------------------
+1 |4 + "abc"
+  |^^^
+  |method + in class Int is deprecated since 2.13.0: Adding a number and a String is deprecated. Use the string interpolation `s"$num$str"`
+val res1: String = "4abc"
+                                                                                
+scala> 4 + "1.0"
+1 warning found
+-- Deprecation Warning: --------------------------------------------------------
+1 |4 + "1.0"
+  |^^^
+  |method + in class Int is deprecated since 2.13.0: Adding a number and a String is deprecated. Use the string interpolation `s"$num$str"`
+val res2: String = "41.0"
+                                                                                
+scala> 4 * "abc"
+-- [E134] Type Error: ----------------------------------------------------------
+1 |4 * "abc"
+  |^^^
+  |None of the overloaded alternatives of method * in class Int with types
+  | (x: Double): Double
+  | (x: Float): Float
+  | (x: Long): Long
+  | (x: Int): Int
+  | (x: Char): Int
+  | (x: Short): Int
+  | (x: Byte): Int
+  |match arguments (("abc" : String))
+1 error found
+
+scala> val a  = 1
+val a: Int = 1
+                                                                                
+scala> val a:int = 1
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |val a:int = 1
+  |      ^^^
+  |      Not found: type int - did you mean Int.type? or perhaps Int?
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+                                                                                
+scala> val a : int = 1
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |val a : int = 1
+  |        ^^^
+  |        Not found: type int - did you mean Int.type? or perhaps Int?
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+                                                                                
+scala> val a:Int = 1
+val a: Int = 1
+                                                                                
+scala> var b = 4
+var b: Int = 4
+
+scala> val a = 1
+       val b = 3
+       if(b<a){
+       println("true")
+       }else{
+       println("false")
+       }
+false
+val a: Int = 1
+val b: Int = 3
+              
+
+scala> val a=1
+val a: Int = 1
+                                                                                
+scala> val b=3
+val b: Int = 3
+                                                                                
+scala> if(b<a)
+       printIn("true")
+-- [E006] Not Found Error: -----------------------------------------------------
+2 |printIn("true")
+  |^^^^^^^
+  |Not found: printIn - did you mean println?
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+                                                                                
+scala> 
+                                                                                
+scala> 
+                                                                                
+scala> if(b<a)
+       println("true")
+                                                                                
+scala> else
+-- [E103] Syntax Error: --------------------------------------------------------
+1 |else
+  |^^^^
+  |Illegal start of statement
+  |
+  | longer explanation available when compiling with `-explain`
+                                                                                
+scala> val a = 1
+       val b = 3
+       if(b<a)
+       println("true")
+       else
+       println("false")
+false
+val a: Int = 1
+val b: Int = 3
+
+
+var i = 1
+       while(i <= 3) {
+       println(i)
+       i += 1
+       }
+1
+2
+3
+var i: Int = 4
+
+scala> def foo: Unit =
+       var i = 1
+-- [E018] Syntax Error: --------------------------------------------------------
+1 |def foo: Unit =
+  |               ^
+  |               expression expected but var found
+  |
+  | longer explanation available when compiling with `-explain`
+                                                                                
+scala> 
+                                                                                
+scala> 
+                                                                                
+scala> 
+                                                                                
+scala> def forLoop = {
+       println("for loop using Java-Style iteration")
+       
+       for(i <- 0 until args.length){
+       println(args(i) + " are mine ")
+       }
+       }
+-- [E006] Not Found Error: -----------------------------------------------------
+4 |for(i <- 0 until args.length){
+  |                 ^^^^
+  |                 Not found: args
+  |
+  | longer explanation available when compiling with `-explain`
+-- [E006] Not Found Error: -----------------------------------------------------
+5 |println(args(i) + " are mine ")
+  |        ^^^^
+  |        Not found: args
+  |
+  | longer explanation available when compiling with `-explain`
+2 errors found
+                                                                                
+scala> forLoop
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |forLoop
+  |^^^^^^^
+  |Not found: forLoop
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+                                                                                
+scala> 
+                                                                                
+scala> 
+                                                                                
+scala> 
+                                                                                
+scala> def forLoop = {
+       println("for loop using Java style iteration")
+       
+       for ( i <- 0 until args.length) {
+       println(args(i) + " are mine ")
+       }
+       }
+-- [E006] Not Found Error: -----------------------------------------------------
+4 |for ( i <- 0 until args.length) {
+  |                   ^^^^
+  |                   Not found: args
+  |
+  | longer explanation available when compiling with `-explain`
+-- [E006] Not Found Error: -----------------------------------------------------
+5 |println(args(i) + " are mine ")
+  |        ^^^^
+  |        Not found: args
+  |
+  | longer explanation available when compiling with `-explain`
+2 errors found
+                                                                                
+scala> 
+                                                                                
+scala> forLoopFile.scala --"apple" "oranges"
+-- Error: ----------------------------------------------------------------------
+1 |forLoopFile.scala --"apple" "oranges"
+  |                            ^
+  |                        end of statement expected but string literal found
+                                                                                
+scala> forLoopFile.scala -- "apple" "oranges"
+-- Error: ----------------------------------------------------------------------
+1 |forLoopFile.scala -- "apple" "oranges"
+  |                             ^
+  |                        end of statement expected but string literal found
+                                                                                
+scala> forLoopFile.scala -- "apple" "oranges"
+-- Error: ----------------------------------------------------------------------
+1 |forLoopFile.scala -- "apple" "oranges"
+  |                             ^
+  |                        end of statement expected but string literal found
+                                                                                
+scala> 
+
+
+
